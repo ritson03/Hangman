@@ -9,17 +9,22 @@ wordToGuess = spellingWords[wordNum]
 guessWord = ""
 for i in range(len(wordToGuess)):
   guessWord += "_"
+print(guessWord)
+print()
 
-print(guess)
 while chances > 0:
-  guesschar = char(input("Enter your guess: "))
+  print()
+  guessChar = input("Enter your guess: ")[0]
+  guessWord = ""
   if guessChar in wordToGuess:
-      for i in range(len(wordToGuess)):
-          if wordToGuess[i] == guessChar:
-              guessWord[i] = guessChar
+    for i in wordToGuess:
+      if i == guessChar:
+        guessWord += guessChar
+      else:
+        guessWord += "_"
+    print(guessChar, "is in the word. You have", guessWord ,"so far")
   else:
-      chances -= 1
-      print(guessChar, "is not in the word. You have", chances ,"lives left")
+    chances -= 1
+    print(guessChar, "is not in the word. You have", chances ,"lives left")
 
 print("You ran out of lives. The word was", wordToGuess)
-      
