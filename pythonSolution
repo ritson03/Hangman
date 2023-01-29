@@ -1,0 +1,25 @@
+import random
+
+spellingWords = ["accident","accidentally","actual","actually","address" '''continue adding spelling words for primary children (yr3/4)''']
+
+wordNum = random.randint(0, len(spellingWords) - 1)
+chances = 5
+wordToGuess = spellingWords[wordNum]
+
+guessWord = ""
+for i in range(len(wordToGuess)):
+  guessWord += "_"
+
+print(guess)
+while chances > 0:
+  guesschar = char(input("Enter your guess: "))
+  if guessChar in wordToGuess:
+      for i in range(len(wordToGuess)):
+          if wordToGuess[i] == guessChar:
+              guessWord[i] = guessChar
+  else:
+      chances -= 1
+      print(guessChar, "is not in the word. You have", chances ,"lives left")
+
+print("You ran out of lives. The word was", wordToGuess)
+      
